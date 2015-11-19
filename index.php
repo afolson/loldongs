@@ -25,15 +25,15 @@ body {
  * Also, loldongs.
 ******************************************************************************/
 
-function Zomg (opts) {
-         opts = opts||{};
-         opts.font = opts.font||{};
-         this.cid = opts.cid||'zomg';
+function Zomg (dongs) {
+         dongs = dongs||{};
+         dongs.font = dongs.font||{};
+         this.cid = dongs.cid||'zomg';
          this.font = {};
-         this.font.link = opts.font.link||'fonts/penis.ttf';
-         this.font.format = opts.font.format||'truetype';
-         this.font.family = opts.font.family||'zomg';
-         this.font.size = opts.font.size||100;
+         this.font.link = dongs.font.link||'fonts/penis.ttf';
+         this.font.format = dongs.font.format||'truetype';
+         this.font.family = dongs.font.family||'zomg';
+         this.font.size = dongs.font.size||100;
          this.genStyle(this.cid,this.font);
          this.preload();
          if ($(this.cid)) {
@@ -42,7 +42,7 @@ function Zomg (opts) {
             this.interval = false;
             this.num = 10;
             this.setSize();
-            if (opts.auto) {
+            if (dongs.auto) {
                setTimeout(function(){this.init();}.bind(this),1000);
             }
           } else {
